@@ -7,9 +7,9 @@
 
 int main()
 { 
-	int c[] = { 11,21,54,67,88,101,256 };
+	float c[] = { 11.1 ,21.2 ,54.3 ,67.5 ,88.6 ,101.8 ,256.8 };
 
-	int x = 68;//需要检测的值
+	float x = 67.4;//需要检测的值
 
 	int head = 0;//开头
 
@@ -17,7 +17,6 @@ int main()
 
 	int tail = sizeof(c) / sizeof(c[0]) - 1;//数组含有的元素个数。尾部。
 
-	int check = 0;//检查值是否在数组内
 	
 
 	if (x<(c[head]) || x>(c[tail]))//大于尾，小于头则代表 x不存在于数组内
@@ -38,7 +37,7 @@ int main()
 
 		while (1)
 		{
-			check = middle;
+		
 
 			if (x == (c[middle])) //检测x存在
 			{
@@ -59,7 +58,7 @@ int main()
 				middle = (head + tail) / 2;
 			}
 
-			if (check == middle)//如果check的值和middle经过运算的值一样那么表示数组中没有这个值。
+			if (tail == middle)//如果tail的值和middle经过运算的值一样那么表示数组中没有这个值。
 			{
 				printf("this number is not exist in the arry\n");
 				break;
