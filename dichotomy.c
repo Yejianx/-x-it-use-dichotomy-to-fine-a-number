@@ -9,7 +9,7 @@ int main()
 { 
 	float c[] = { 11.1 ,21.2 ,54.3 ,67.5 ,88.6 ,101.8 ,256.8 };
 
-	float x = 67.4;//需要检测的值
+	float x = 21.1;//需要检测的值
 
 	int head = 0;//开头
 
@@ -23,14 +23,7 @@ int main()
 	{
 		printf("this number is not exist in the arry\n");
 	}
-	else if (x == (c[head]))
-	{
-		printf("this number is exist in the c[0]\n");
-	}
-	else if (x == (c[tail]))
-	{
-		printf("this number is exist in the c[%d]\n",tail);
-	}
+	
 	else
 	{
 		middle = tail / 2;//取中间值
@@ -46,19 +39,19 @@ int main()
 			}
 			else if (x > (c[middle]))//如果x大于中间那么 头移动到中间，中间从新定位。
 			{
-				head = middle;
+				head = middle+1;
 
 				middle = (head + tail)/2;
 				
 			}
 			else//如果x小于中间那么 尾移动到中间，中间从新定位。
 			{
-				tail = middle;
+				tail = middle-1;
 
 				middle = (head + tail) / 2;
 			}
 
-			if (tail == middle)//如果tail的值和middle经过运算的值一样那么表示数组中没有这个值。
+			if (head>tail)//如果tail的值和middle经过运算的值一样那么表示数组中没有这个值。
 			{
 				printf("this number is not exist in the arry\n");
 				break;
